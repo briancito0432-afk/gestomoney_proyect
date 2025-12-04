@@ -1,8 +1,10 @@
 // Archivo: src/services/api.js
 import axios from 'axios';
 
-// URL base del backend Flask
-const API_BASE_URL = 'http://localhost:5002/api';
+// --- CAMBIO REALIZADO AQUÍ ---
+// Antes: 'http://localhost:5002/api'
+// Ahora: Usamos la URL de tu backend en Render
+const API_BASE_URL = 'https://gestomoney-web.onrender.com/api';
 
 // Crear instancia de axios con configuración base
 const api = axios.create({
@@ -33,7 +35,10 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       // Token expirado o inválido
       localStorage.removeItem('jwt_token');
-      window.location.href = '/login';
+      // Opcional: Redirigir usando window.location solo si no estamos ya en login
+      if (!window.location.pathname.includes('/login')) {
+          window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }
