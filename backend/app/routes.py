@@ -1,4 +1,3 @@
-# Archivo: app/routes.py
 from flask import Blueprint, request, jsonify
 from app import db, bcrypt
 from app.models import User, Category, Transaction
@@ -56,6 +55,11 @@ def create_default_categories(user_id):
     for cat in default_categories:
         db.session.add(Category(user_id=user_id, **cat))
 
+# --- RUTA DE INICIO (ESTA ES LA NUEVA) ---
+@main.route('/')
+def index():
+    return "¡Hola! El servidor de Gestomoney está funcionando correctamente 🚀"
+
 # --- RUTAS DE AUTENTICACIÓN ---
 
 @main.route('/api/register', methods=['POST'])
@@ -68,7 +72,7 @@ def register():
     
     if not email or not password or not full_name:
         return jsonify({'message': 'Faltan datos requeridos'}), 400
-         
+          
     if User.query.filter_by(email=email).first():
         return jsonify({'message': 'El email ya está registrado'}), 409
 
