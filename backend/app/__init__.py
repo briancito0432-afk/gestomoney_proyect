@@ -22,14 +22,10 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     migrate.init_app(app, db)
     
-    CORS(app, resources={
-        r"/api/*": {
-            "origins": ["http://localhost:5173", "http://127.0.0.1:5173"],
-            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "allow_headers": ["Content-Type", "Authorization"],
-            "supports_credentials": True
-        }
-    })
+    # --- MODIFICACIÓN CLAVE AQUÍ ---
+    # Cambiamos la lista de "localhost" por "*"
+    # Esto permite que tu Frontend en Render (y cualquier otro) pueda conectarse sin errores.
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
     
     from app.routes import main
     app.register_blueprint(main)
