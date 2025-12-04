@@ -1,0 +1,182 @@
+/* Archivo: src/assets/styles/skeleton.css */
+
+/* Animación de pulso */
+@keyframes skeleton-loading {
+  0% {
+    background-color: #2c3444;
+  }
+  50% {
+    background-color: #3a4254;
+  }
+  100% {
+    background-color: #2c3444;
+  }
+}
+
+/* Clase base para skeleton */
+.skeleton {
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 4px;
+  background-color: #2c3444;
+}
+
+/* Skeleton para texto */
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.skeleton-text.large {
+  height: 24px;
+}
+
+.skeleton-text.small {
+  height: 12px;
+}
+
+/* Skeleton para tarjetas del dashboard */
+.skeleton-card {
+  background-color: var(--color-dark-bg);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.skeleton-card-title {
+  width: 60%;
+  height: 14px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.skeleton-card-value {
+  width: 80%;
+  height: 32px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.skeleton-card-trend {
+  width: 40%;
+  height: 12px;
+  border-radius: 4px;
+}
+
+/* Skeleton para gráficos */
+.skeleton-chart {
+  background-color: var(--color-dark-bg);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-chart-title {
+  width: 40%;
+  height: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.skeleton-chart-body {
+  flex: 1;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #2c3444 0%,
+    #3a4254 50%,
+    #2c3444 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Skeleton para tabla de transacciones */
+.skeleton-table {
+  background-color: var(--color-dark-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: var(--spacing-md);
+}
+
+.skeleton-table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 12px 15px;
+  background-color: #2c3444;
+}
+
+.skeleton-table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #2c3444;
+}
+
+.skeleton-table-cell {
+  height: 16px;
+  border-radius: 4px;
+}
+
+/* Skeleton para lista de transacciones recientes */
+.skeleton-transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2c3444;
+}
+
+.skeleton-transaction-details {
+  flex: 1;
+}
+
+.skeleton-transaction-name {
+  width: 60%;
+  height: 16px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+.skeleton-transaction-date {
+  width: 40%;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.skeleton-transaction-amount {
+  width: 80px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+/* Skeleton para filtros */
+.skeleton-filter-bar {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.skeleton-filter-input {
+  flex: 1;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.skeleton-filter-select {
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+}

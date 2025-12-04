@@ -1,0 +1,27 @@
+/* Archivo: src/assets/styles/variables.css */
+
+:root {
+    /* Paleta de Colores */
+    --color-primary: #007bff;
+    --color-secondary: #0056b3;
+    --color-dark-bg: #1c2331;
+    --color-app-bg: #121820;
+    --color-light-bg: #f8f9fa;
+    --color-text-dark: #343a40;
+    --color-text-light: #ffffff;
+    --color-text-gray: #6c757d;
+    --color-border: #dee2e6;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

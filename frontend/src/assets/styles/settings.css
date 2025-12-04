@@ -1,0 +1,341 @@
+/* Archivo: src/assets/styles/settings.css */
+
+.settings-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.settings-section {
+  background-color: var(--color-dark-bg);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #2c3444;
+}
+
+.settings-section-icon {
+  font-size: 1.5rem;
+}
+
+.settings-section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.settings-section-description {
+  font-size: 0.9rem;
+  color: #9fa6ad;
+  margin-top: 4px;
+}
+
+/* Formulario de settings */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.settings-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+.settings-form-group input,
+.settings-form-group select {
+  background-color: #2c3444;
+  color: var(--color-text-light);
+  border: 1px solid #343a40;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.2s;
+}
+
+.settings-form-group input:focus,
+.settings-form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.settings-form-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settings-form-group small {
+  font-size: 0.8rem;
+  color: #9fa6ad;
+}
+
+/* Avatar */
+.settings-avatar-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.settings-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.settings-avatar-info {
+  flex: 1;
+}
+
+.settings-avatar-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.settings-avatar-info p {
+  font-size: 0.85rem;
+  color: #9fa6ad;
+}
+
+.settings-avatar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Toggle Switch */
+.settings-toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #2c3444;
+}
+
+.settings-toggle-group:last-child {
+  border-bottom: none;
+}
+
+.settings-toggle-info {
+  flex: 1;
+}
+
+.settings-toggle-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.settings-toggle-description {
+  font-size: 0.85rem;
+  color: #9fa6ad;
+}
+
+/* Switch personalizado */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2c3444;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Botones de acción */
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid #2c3444;
+}
+
+.settings-danger-zone {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+}
+
+.settings-danger-zone h4 {
+  color: var(--color-danger);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.settings-danger-zone p {
+  font-size: 0.9rem;
+  color: #9fa6ad;
+  margin-bottom: var(--spacing-sm);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-avatar-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .settings-actions {
+    flex-direction: column;
+  }
+
+  .settings-actions button {
+    width: 100%;
+  }
+}
+
+/* --- ACORDEÓN (COLLAPSIBLE SECTIONS) --- */
+.settings-section {
+  background-color: var(--color-dark-bg);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);  /* ← Cambio de lg a md */
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: var(--spacing-md);  /* ← Cambio de lg a md */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+  border-bottom: none;
+}
+
+.settings-section-header:hover {
+  background-color: #2c3444;
+}
+
+.settings-section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.settings-section-toggle {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: var(--color-primary);
+}
+
+.settings-section-toggle.collapsed {
+  transform: rotate(-90deg);
+}
+
+.settings-section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 var(--spacing-lg);
+}
+
+.settings-section-content.expanded {
+  max-height: 2000px;
+  padding: var(--spacing-md);
+  padding-top: 0;
+}
+
+/* Ajustar el título para que no tenga borde inferior */
+.settings-section-header .settings-section-info {
+  flex: 1;
+}
+
+.settings-section-info h2 {
+  margin: 0;
+}
+
+.settings-section-info p {
+  margin: 4px 0 0 0;
+}
